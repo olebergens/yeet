@@ -64,15 +64,18 @@ int line(double x, double y, double px, double py, double qx, double qy) {
 }
 
 /**
- * @param x :
- * @param y :
- * @param lx :
- * @param uy :
- * @param rx :
- * @param oy :
- * @return
+ * @param x : x-Koordinate des Rechtecks
+ * @param y : y-Kooridnate des Rechtecks
+ * @param lx : untere linke Ecke des Rechtsecks x-Koordinate
+ * @param uy : untere linke Ecke des Rechtsecks y-Koordinate
+ * @param rx : obere rechte Ecke des Rechtecks x-Koordinate
+ * @param oy : obere rechte Ecke des Rechtecks y-Koordinate
+ * @return 1 falls der Abstand zwischen einem der Punkte > 0.5 ist, ansonsten 0.
  */
 int rectangle(double x, double y, double lx, double uy, double rx, double oy) {
+    if (getDistanceBetweenPoints(x, y, lx, uy) > 0.5) return 1;
+    if (getDistanceBetweenPoints(x, y, rx, oy) > 0.5) return 1;
+    if (getDistanceBetweenPoints(lx, uy, rx, oy) > 0.5) return 1;
     return 0;
 }
 
