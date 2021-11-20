@@ -43,12 +43,12 @@ int wzw(int x, int y) {
 
 void approx() {
     srand(time(NULL));
-    int x, y, p;
-    double approx;
+    float x, y;
+    int p;
     printf("Bitte gib die Anzahl an zu ziehenden Punkten ein: \n");
     fflush(stdout);
     scanf("%d", &p);
-    float count_incircle = 0;
+    double count_incircle = 0.0;
     for (int i = 0; i <= p; i++) {
         x = getRangeInt(0, 1);
         y = getRangeInt(0, 1);

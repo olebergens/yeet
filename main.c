@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "praktikum.c"
+#include "homework_series02.c"
 
 int main(void) {
-    approx();
+    contained(1245, 2, 8);
 }
