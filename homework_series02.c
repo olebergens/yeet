@@ -1,6 +1,4 @@
-//
-// Created by Ole Bergens on 20.11.21.
-//
+
 /**
  * @param x : Zahl aus der die Quadratwurzel gezogen werden soll
  * @return Wert der Quadratwurzel von x (sqrt(x))
@@ -26,9 +24,9 @@ double squareRoot(double x) {
  */
 int contained(double x, double a, double b) {
     double t = a;
-    a = a <= b ? a : b;
-    b = b >= t ? b : t;
-    return a <= x <= b ? 1 : 0;
+    a = a < b ? a : b;
+    b = b > t ? b : t;
+    return a <= x && x <= b ? 1 : 0;
 }
 
 /**
@@ -64,6 +62,12 @@ int line(double x, double y, double px, double py, double qx, double qy) {
 }
 
 /**
+ *           (lx,oy)---------------------(rx,oy)
+ *                  |                   |
+ *                  |       (x,y)       |
+ *                  |                   |
+ *           (lx,uy)---------------------(rx,uy)
+ *
  * @param x : x-Koordinate des Rechtecks
  * @param y : y-Kooridnate des Rechtecks
  * @param lx : untere linke Ecke des Rechtsecks x-Koordinate
@@ -74,8 +78,18 @@ int line(double x, double y, double px, double py, double qx, double qy) {
  */
 int rectangle(double x, double y, double lx, double uy, double rx, double oy) {
     if (getDistanceBetweenPoints(x, y, lx, uy) > 0.5) return 1;
+    if (getDistanceBetweenPoints(x, y, lx, oy) > 0.5) return 1;
+    if (getDistanceBetweenPoints(x, y, rx, uy) > 0.5) return 1;
     if (getDistanceBetweenPoints(x, y, rx, oy) > 0.5) return 1;
-    if (getDistanceBetweenPoints(lx, uy, rx, oy) > 0.5) return 1;
     return 0;
 }
 
+void drawHouse(int xKor, int yKor) {
+    // y-Achse
+    for (int i = 0; i < yKor; i++) {
+        // x-Achse
+        for (int j = 0; j < xKor; j++) {
+
+        }
+    }
+}
