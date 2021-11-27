@@ -1,3 +1,21 @@
+/**
+ * @param n : Übergabe des Parameters N bei einer N x K Matrix
+ * @param k : Übergabe des Paramaters K bei einer N x K oder K x M Matrix
+ * @param m : Übergabe des Parameters M bei einer N x M Matrix
+ */
+void matrix_product(int n, int k, int m) {
+    int matrixA[n][k];
+    int matrixB[k][m];
+    int matrixOut[n][m];
+
+    for (int i = 1; i < n; n++) {
+        for (int j = 1; j < m; j++) {
+            for (int l = 1; l < k - 1; l++) {
+                matrixOut[i][j] = matrixOut[i][j] + matrixA[i][l] * matrixB[l][j];
+            }
+        }
+    }
+}
 
 /**
  * @param x : Zahl aus der die Quadratwurzel gezogen werden soll
@@ -77,19 +95,21 @@ int line(double x, double y, double px, double py, double qx, double qy) {
  * @return 1 falls der Abstand zwischen einem der Punkte > 0.5 ist, ansonsten 0.
  */
 int rectangle(double x, double y, double lx, double uy, double rx, double oy) {
-    if (getDistanceBetweenPoints(x, y, lx, uy) > 0.5) return 1;
-    if (getDistanceBetweenPoints(x, y, lx, oy) > 0.5) return 1;
-    if (getDistanceBetweenPoints(x, y, rx, uy) > 0.5) return 1;
-    if (getDistanceBetweenPoints(x, y, rx, oy) > 0.5) return 1;
-    return 0;
+    if (line(x, y, lx, uy, rx, uy) < 0.5 || line(x, y, lx, uy, lx, oy) < 0.5 || line(x, y, lx, oy, rx, oy) < 0.5 ||
+            line(x, y, rx, oy, rx, uy) < 0.5) return 0;
+    return 1;
 }
 
 void drawHouse(int xKor, int yKor) {
+    // um die eingegebenen Werte zu behalten
+    int y = yKor;
+    int x = xKor;
     // y-Achse
-    for (int i = 0; i < yKor; i++) {
-        // x-Achse
-        for (int j = 0; j < xKor; j++) {
+    for (; yKor > 0; yKor--) {
+        // x-Achse bis der
+        for (int i = 0; i <= xKor; i++) {
 
         }
+        printf("\n");
     }
 }

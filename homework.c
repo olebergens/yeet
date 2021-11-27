@@ -15,7 +15,6 @@
  *
  *  @AUTHOR: Ole Bergens (221200097), Nils Martin (NaN)
  */
-const double DELTA = 1.E-5;
 void newton() {
     double a;
     printf("Bitte gib die Zahl a ein, aus welcher die Quadratwurzel berechnet werden soll: \n a: ");
