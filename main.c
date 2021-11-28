@@ -5,4 +5,5 @@
 #include "homework.c"
 
 int main(void) {
+    drawHouse(30, 50);
 }

@@ -107,8 +107,10 @@ void drawHouse(int xKor, int yKor) {
     // y-Achse
     for (; yKor > 0; yKor--) {
         // x-Achse bis der
-        for (int i = 0; i <= xKor; i++) {
-
+        for (float i = 0; i <= xKor; i++) {
+            if ((yKor == 1 || yKor == 15) && contained(i, 0, 15)) printf("*");
+            if (contained(yKor, 1, 15) && (i == 0 || i == 30)) printf("*");
+            else printf(" ");
         }
         printf("\n");
     }
