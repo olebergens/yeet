@@ -1,3 +1,4 @@
+#include "stdio.h"
 /**
  * @param n : Übergabe des Parameters N bei einer N x K Matrix
  * @param k : Übergabe des Paramaters K bei einer N x K oder K x M Matrix
@@ -15,6 +16,27 @@ void matrix_product(int n, int k, int m) {
             }
         }
     }
+}
+
+/**
+ * Matrixprodukt durch abtasten einer Textfile..
+ * Ich zähle die Leerzeichen um das N, K, M zu filtern der Matrix.
+ * Mit einem rewind dann nochmal durchgehen und die Zahlen herauslesen.
+ * Dann ausrechnen.
+ * Wir sollen die Matrix in Form von: N x M
+ */
+void matrixProduct() {
+    int c;
+    int spacesCount = 0, lbCount = 0;
+    int matrixA = 0, matrixB = 0, matrixOut = 0;
+
+    while (c != EOF) {
+        c = getchar();
+
+    }
+    matrixA = 0;
+    matrixB = 0;
+    matrixOut = 0;
 }
 
 /**
