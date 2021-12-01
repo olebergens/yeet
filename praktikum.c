@@ -99,12 +99,14 @@ void primeFactorsTwo(long n) {
 
     for (int i = 1; i < numFactors; ++i) {
         if (temp != out[i]) {
-            printf(" %d^%d * ", temp, pot);
+            if (pot > 1)
+                printf(" %d^%d * ", temp, pot);
+            else printf("%d *", temp);
             temp = out[i];
             pot = 1;
         } else {
             pot++;
         }
     }
-    printf("%d^%d", temp, pot);
+    printf("%d", temp);
 }
