@@ -129,5 +129,14 @@ void sieve() {
     printf("\n");
     for (int i = 2; i <= MAX; i++)
         if (prim[i] == 1) printf("%d ", i);
+}
 
+#define TAPE_LENGTH 10
+void turingConfOut(int state, int position, int tape[]) {
+    printf("Zustand: %d ", state);
+    printf("Band: ");
+    for (int i = 0; i < TAPE_LENGTH; ++i) {
+        if (i == position) printf("[%d] ", tape[i]);
+        else printf("%d ", tape[i]);
+    }
 }
