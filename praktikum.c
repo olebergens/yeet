@@ -108,5 +108,6 @@ void primeFactorsTwo(long n) {
             pot++;
         }
     }
-    printf("%d", temp);
+    if (pot > 1)    printf("%d^%d", temp, pot);
+    else printf("%d", temp);
 }
