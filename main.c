@@ -3,7 +3,7 @@
 #include "homework_series02.c"
 #include "uebung.c"
 #include "homework.c"
-
+#include "string.h"
 
 int find(char first[], int lengthFirst, char second[], int lengthSecond) {
     int j, e, p;
@@ -19,15 +19,25 @@ int find(char first[], int lengthFirst, char second[], int lengthSecond) {
     return -1;
 }
 
+int read_int() {
+    int c, e;
+    while ((c = getchar() - '0') != ' ' - '0' && c != '\n' - '0') {
+        e = 10*e+c;
+    }
+    return e;
+}
+
+void reverse() {
+    char mystrg[60];
+    int length, g;
+    scanf("%s", mystrg);
+    length = strlen(mystrg);
+    for (g = length - 1; g >= 0; g--) {
+        printf("%c", mystrg[g]);
+    }
+}
+
 int main(void) {
-    char c1[] = "foo bar baz";
-    char c2[] = "foo";
-    char c3[] = "bar";
-    char c4[] = "baz";
-    char c5[] = "gak";
-    printf("%d\n", find(c1, 11, c2, 3));
-    printf("%d\n", find(c1, 11, c3, 3));
-    printf("%d\n", find(c1, 11, c4, 3));
-    printf("%d\n", find(c1, 11, c5, 3));
+    primeFactors(4200);
 }
 

@@ -1,6 +1,3 @@
-//
-// Created by Ole Bergens on 17.11.21.
-//
 #include <stdio.h>
 #include "stdlib.h"
 #include <math.h>
@@ -55,4 +52,29 @@ void approx() {
         if (wzw(x, y) == 1) count_incircle++;
     }
     printf("Approximation pi: %lf", (count_incircle / (double) p) * 4);
+}
+
+void primeFactors(long n) {
+    printf("%ld = ", n);
+    int max = ceil(log10(n) / log10(2));
+    long tmp[max];
+    int numFactors = 0;
+    for (int i = 2; i <= n; i++) {
+        // Abfrage: i Primfaktor
+        if (n % i == 0) {
+            tmp[numFactors++] = i;
+            n = n / i;
+            i = 1;
+        }
+    }
+    long out[numFactors];
+    for (int i = 0; i < numFactors; ++i) {
+        out[i] = tmp[i];
+    }
+
+    for (int i = 0; i < numFactors; ++i) {
+        if (i == numFactors - 1) {
+            printf("%ld", out[i]);
+        } else printf("%ld * ", out[i]);
+    }
 }
