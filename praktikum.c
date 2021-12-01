@@ -111,3 +111,23 @@ void primeFactorsTwo(long n) {
     if (pot > 1)    printf("%d^%d", temp, pot);
     else printf("%d", temp);
 }
+
+
+#define MAX 100
+void sieve() {
+    int prim[MAX + 1];
+    for (int i = 0; i <= MAX; i++) prim[i] = 1;
+
+    for (int i = 2; i*i <= MAX; i++) {
+        if (prim[i] == 1) {
+            for (int j = i*i; j <= MAX; j += i) prim[j] = 0;
+        }
+    }
+
+    for (int i = 2; i <= MAX; i++) printf("%d ", prim[i]);
+
+    printf("\n");
+    for (int i = 2; i <= MAX; i++)
+        if (prim[i] == 1) printf("%d ", i);
+
+}
