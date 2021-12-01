@@ -132,7 +132,7 @@ void sieve() {
 }
 
 #define TAPE_LENGTH 10
-void turingConfOut(int state, int position, int tape[]) {
+void print_config(int state, int position, int tape[]) {
     printf("Zustand: %d ", state);
     printf("Band: ");
     for (int i = 0; i < TAPE_LENGTH; ++i) {
@@ -140,3 +140,29 @@ void turingConfOut(int state, int position, int tape[]) {
         else printf("%d ", tape[i]);
     }
 }
+
+#define STATES 2
+#define SYMBOLS 3
+void print_definition(int write_symbol[STATES][SYMBOLS], int next_state[STATES][SYMBOLS], int move[STATES][SYMBOLS]) {
+    write_symbol[0][0] = 1; next_state[0][0] = 0; move[0][0] = 1;
+    write_symbol[0][1] = 0; next_state[0][1] = 0; move[0][1] = 1;
+    write_symbol[0][2] = 2; next_state[0][2] = 1; move[0][2] = 0;
+    write_symbol[1][0] = 0; next_state[1][0] = 1; move[1][0] = 0;
+    write_symbol[1][1] = 1; next_state[1][1] = 1; move[1][1] = 0;
+    write_symbol[1][2] = 2; next_state[1][2] = 1; move[1][2] = 0;
+
+    printf("s r | s w m\n");
+    int second = 0;
+    // erste schleife für second [] [x]<--
+    for (int i = 1; i < SYMBOLS + 1; i++) {
+        if (second == 0)
+            printf("%d %d | %d %d %d \n", 0, i - 1, write_symbol[0][i - 1], next_state[0][i - 1], move[0][i - 1]);
+        else if (second == 1) printf("%d %d | %d %d %d \n", 1, i - 1, write_symbol[1][i - 1], next_state[1][i - 1], move[1][i - 1]);
+
+        if (i - 1 == 2){
+            second++;
+            i = 0;
+        }
+    }
+}
+

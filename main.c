@@ -41,5 +41,10 @@ int main(void) {
     //primeFactors(42);
     //primeFactorsTwo(49);
     //sieve(100);
+    int write_symbol[STATES][SYMBOLS];
+    int next_state[STATES][SYMBOLS];
+    int move[STATES][SYMBOLS];
+    print_definition(write_symbol, next_state, move);
+
 }
 
