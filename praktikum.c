@@ -153,7 +153,7 @@ void print_definition(int write_symbol[STATES][SYMBOLS], int next_state[STATES][
 
     printf("s r | s w m\n");
     int second = 0;
-    // erste schleife für second [] [x]<--
+
     for (int i = 1; i < SYMBOLS + 1; i++) {
         if (second == 0)
             printf("%d %d | %d %d %d \n", 0, i - 1, write_symbol[0][i - 1], next_state[0][i - 1], move[0][i - 1]);
