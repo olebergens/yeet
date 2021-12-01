@@ -38,6 +38,7 @@ void reverse() {
 }
 
 int main(void) {
-    primeFactors(4200);
+    //primeFactors(42);
+    primeFactorsTwo(4200);
 }
 

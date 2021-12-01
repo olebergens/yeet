@@ -59,6 +59,7 @@ void primeFactors(long n) {
     int max = ceil(log10(n) / log10(2));
     long tmp[max];
     int numFactors = 0;
+
     for (int i = 2; i <= n; i++) {
         // Abfrage: i Primfaktor
         if (n % i == 0) {
@@ -67,14 +68,43 @@ void primeFactors(long n) {
             i = 1;
         }
     }
+
     long out[numFactors];
-    for (int i = 0; i < numFactors; ++i) {
-        out[i] = tmp[i];
-    }
+    for (int i = 0; i < numFactors; ++i) out[i] = tmp[i];
 
     for (int i = 0; i < numFactors; ++i) {
-        if (i == numFactors - 1) {
-            printf("%ld", out[i]);
-        } else printf("%ld * ", out[i]);
+        if (i == numFactors - 1) printf("%ld", out[i]);
+        else printf("%ld * ", out[i]);
     }
+}
+
+void primeFactorsTwo(long n) {
+    printf("%ld = ", n);
+    int max = ceil(log10(n) / log10(2));
+    long tmp[max];
+    int numFactors = 0;
+    for (int i = 2; i <= n; ++i) {
+        if (n % i == 0) {
+            tmp[numFactors++] = i;
+            n = n / i;
+            i = 1;
+        }
+    }
+    long out[numFactors];
+
+    for (int i = 0; i < numFactors; i++) out[i] = tmp[i];
+
+    long temp = out[0];
+    long pot = 1;
+
+    for (int i = 1; i < numFactors; ++i) {
+        if (temp != out[i]) {
+            printf(" %d^%d * ", temp, pot);
+            temp = out[i];
+            pot = 1;
+        } else {
+            pot++;
+        }
+    }
+    printf("%d^%d", temp, pot);
 }
