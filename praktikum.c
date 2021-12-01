@@ -100,16 +100,16 @@ void primeFactorsTwo(long n) {
     for (int i = 1; i < numFactors; ++i) {
         if (temp != out[i]) {
             if (pot > 1)
-                printf(" %d^%d * ", temp, pot);
-            else printf("%d *", temp);
+                printf(" %ld^%ld * ", temp, pot);
+            else printf("%ld *", temp);
             temp = out[i];
             pot = 1;
         } else {
             pot++;
         }
     }
-    if (pot > 1)    printf("%d^%d", temp, pot);
-    else printf("%d", temp);
+    if (pot > 1) printf("%ld^%ld", temp, pot);
+    else printf("%ld", temp);
 }
 
 
@@ -166,3 +166,6 @@ void print_definition(int write_symbol[STATES][SYMBOLS], int next_state[STATES][
     }
 }
 
+void simulateTuring() {
+
+}
