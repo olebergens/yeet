@@ -4,6 +4,7 @@
 #include "uebung.c"
 #include "homework.c"
 #include "string.h"
+#include "homework_series3.c"
 
 int find(char first[], int lengthFirst, char second[], int lengthSecond) {
     int j, e, p;
@@ -37,14 +38,15 @@ void reverse() {
     }
 }
 
-int main(void) {
-    //primeFactors(42);
-    //primeFactorsTwo(49);
-    //sieve(100);
-    int write_symbol[STATES][SYMBOLS];
-    int next_state[STATES][SYMBOLS];
-    int move[STATES][SYMBOLS];
-    print_definition(write_symbol, next_state, move);
+int main(int argc, char *argv[]) {
+    int n;
+    if (argc < 2 || (n = atoi(argv[1])) < 0) {
+        printf("Usage: %s <number-of-disks>\n", argv[0]);
+        return -1;
+    }
 
+    heapAlgorithm(generateAlphabet(n), n);
+
+    return 0;
 }
 
