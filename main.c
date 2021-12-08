@@ -6,38 +6,6 @@
 #include "string.h"
 #include "homework_series3.c"
 
-int find(char first[], int lengthFirst, char second[], int lengthSecond) {
-    int j, e, p;
-    if (lengthSecond > lengthFirst) return -1;
-    for (int i = 0; i <= lengthFirst - lengthSecond; i++) {
-        p = e = i;
-        for (j = 0; j < lengthSecond; j++) {
-            if (second[j] == first[e]) e++;
-            else break;
-        }
-        if (j == lengthSecond) return p;
-    }
-    return -1;
-}
-
-int read_int() {
-    int c, e;
-    while ((c = getchar() - '0') != ' ' - '0' && c != '\n' - '0') {
-        e = 10*e+c;
-    }
-    return e;
-}
-
-void reverse() {
-    char mystrg[60];
-    int length, g;
-    scanf("%s", mystrg);
-    length = strlen(mystrg);
-    for (g = length - 1; g >= 0; g--) {
-        printf("%c", mystrg[g]);
-    }
-}
-
 int main(int argc, char *argv[]) {
     int n;
     if (argc < 2 || (n = atoi(argv[1])) < 0) {
@@ -45,8 +13,8 @@ int main(int argc, char *argv[]) {
         return -1;
     }
 
-    heapAlgorithm(generateAlphabet(n), n);
-
+    heapAlgorithm(generateAlphabet(n), n, n);
+    printf("%d permutations", countPerm - 1);
     return 0;
 }
 

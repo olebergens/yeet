@@ -9,30 +9,30 @@ char* generateAlphabet(int amount) {
     }
     return alphabet;
 }
+
+int countPerm = 1;
 void printArray(char *arr, int permutation) {
-    for (int i = 0; i < permutation; i++)
+    printf("%d: ", countPerm);
+    for (int i = 0; i < permutation; i++) {
         printf("%c", arr[i]);
+    }
+    countPerm++;
     printf("\n");
 }
 
-void swap(char p[], char q[]) {
-    char temp = *p;
-    *p = *q;
-    *q = temp;
-}
+void heapAlgorithm(char* alphabet, int size, int n ) {
+    if (size == 1) printArray(alphabet, n);
 
-void heapAlgorithm(char* alphabet, int size) {
-    if (size == 1) {
-        printArray(alphabet, size);
-        return;
-    } else {
-
-        for (int i = 0; i < size - 1; i++) {
-            if (size % 2 == 1) swap(&alphabet[0], &alphabet[size - 1]);
-            else swap(&alphabet[i], &alphabet[size - 1]);
-            heapAlgorithm(alphabet, size - 1);
+    for (int i = 0; i < size; i++) {
+        heapAlgorithm(alphabet, size - 1, n);
+        if (size % 2 == 1) {
+            int temp = alphabet[0];
+            alphabet[0] = alphabet[size - 1];
+            alphabet[size - 1] = temp;
+        } else {
+            int temp = alphabet[i];
+            alphabet[i] = alphabet[size - 1];
+            alphabet[size - 1] = temp;
         }
-
-        for (int i = 0; i < size; i++) printf("%c", alphabet[i]);
     }
 }
