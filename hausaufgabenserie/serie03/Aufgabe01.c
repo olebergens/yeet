@@ -42,8 +42,6 @@ void heapAlgorithm(char* alphabet, int size, int n ) {
     }
 }
 
-/**
- *
 int main(int argc, char *argv[]) {
     int n;
     if (argc < 2 || (n = atoi(argv[1])) < 0) {
@@ -53,4 +51,4 @@ int main(int argc, char *argv[]) {
     heapAlgorithm(generateAlphabet(n), n, n);
     printf("%d permutations", countPerm - 1);
     return 0;
- */
+}

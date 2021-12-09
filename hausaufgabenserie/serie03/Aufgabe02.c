@@ -26,11 +26,9 @@ void bubbleSort(int arr[], int sizeArr) {
     }
 }
 
-/**
- * int main() {
-int arr[] = {21, 60, 32, 01, 41, 34, 5};
-int n = sizeof(arr) / sizeof(arr[0]);
-bubbleSort(arr, n);
-printIntArray(arr, n);
+int main() {
+    int arr[] = {21, 60, 32, 01, 41, 34, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    bubbleSort(arr, n);
+    printIntArray(arr, n);
 }
- */
