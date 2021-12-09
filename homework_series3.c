@@ -12,7 +12,7 @@ char* generateAlphabet(int amount) {
 }
 
 int countPerm = 1;
-void printArray(char *arr, int permutation) {
+void printCharArray(char *arr, int permutation) {
     printf("%d: ", countPerm);
     for (int i = 0; i < permutation; i++) {
         printf("%c", arr[i]);
@@ -26,7 +26,7 @@ void printArray(char *arr, int permutation) {
  * @param n
  */
 void heapAlgorithm(char* alphabet, int size, int n ) {
-    if (size == 1) printArray(alphabet, n);
+    if (size == 1) printCharArray(alphabet, n);
 
     for (int i = 0; i < size; i++) {
         heapAlgorithm(alphabet, size - 1, n);
@@ -71,7 +71,7 @@ void printIntArray(int arr[], int sizeArr) {
     for (int i = 0; i < sizeArr; i++) {
         for (int j = 1; j < sizeArr - i; j++) {
             if (arr[j - 1] > arr[j]) {
-                // swapping elements
+                // swapping elements -> könnte man auch als Funktion schreiben und benutzen
                 temp = arr[j - 1];
                 arr[j - 1] = arr[j];
                 arr[j] = temp;
