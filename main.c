@@ -1,11 +1,13 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "ctype.h"
-#include "praktikum.c"
-#include "homework_series02.c"
-#include "uebung.c"
-#include "homework.c"
-#include "homework_series3.c"
+#include "praktikum/praktikum.c"
+#include "hausaufgabenserie/serie02/homework_series02.c"
+#include "uebung/uebung.c"
+#include "hausaufgabenserie/serie01/homework.c"
+#include "hausaufgabenserie/serie03/homework_series3.c"
+#include "hausaufgabenserie/serie03/Aufgabe01.c"
+#include "hausaufgabenserie/serie03/Aufgabe02.c"
 
 #define N 29
 #define C_SPACE 26
