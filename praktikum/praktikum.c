@@ -166,7 +166,3 @@ void print_definition(int write_symbol[STATES][SYMBOLS], int next_state[STATES][
         }
     }
 }
-
-void simulateTuring() {
-
-}

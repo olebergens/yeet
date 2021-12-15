@@ -6,6 +6,7 @@
 #include "hausaufgabenserie/serie01/homework.c"
 #include "hausaufgabenserie/serie03/Aufgabe01.c"
 #include "hausaufgabenserie/serie03/Aufgabe02.c"
+#include "praktikum/conway.c"
 
 #define N 29
 #define C_SPACE 26
@@ -27,6 +28,21 @@ int getcc() {
 }
 
 int main(void) {
-    printf("%d", getcc());
+    char f1[X_DIMENSION][Y_DIMENSION];
+    init_field(f1);
+
+    f1[2][0] = ALIVE;
+    f1[0][1] = ALIVE;
+    f1[2][1] = ALIVE;
+    f1[1][2] = ALIVE;
+    f1[2][2] = ALIVE;
+    print_field(f1);
+
+    while (getchar()) {
+        step_field(f1);
+        print_field(f1);
+    }
+
+    return 0;
 }
 
