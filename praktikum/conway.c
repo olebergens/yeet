@@ -9,7 +9,9 @@ int live_neighbour_cell(char f[X_DIMENSION][Y_DIMENSION], int r, int c) {
     for (i = r - 1; i <= r + 1; i++) {
         for (j = c - 1; j <= c + 1; j++) {
             if ((i == r && j == c) || (i < 0 || j < 0) || (i >= X_DIMENSION || j >= Y_DIMENSION)) continue;
-            if (f[i][j] == 1) count++;
+            if (f[i][j] == ALIVE){
+                count++;
+            }
         }
     }
     return count;
@@ -57,7 +59,7 @@ void print_field(char f[X_DIMENSION][Y_DIMENSION]) {
     row();
     for (int i = 0; i < X_DIMENSION; i++) {
         printf(":");
-        for (int j = 0; j < X_DIMENSION; j++) printf(" %c :", f[i][j]);
+        for (int j = 0; j < Y_DIMENSION; j++) printf(" %c :", f[i][j]);
         row();
     }
 }
