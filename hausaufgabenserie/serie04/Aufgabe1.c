@@ -54,6 +54,7 @@ int start(void) {
      * Wir reversen hier die Liste mit der Funktion um eine verkettete Liste umzudrehen
      */
     reverseLinkedList(&head);
+
     /**
      * Hier wird eine Schleife durchlaufen, welches jedes Element aus der Liste ausgibt.
      */

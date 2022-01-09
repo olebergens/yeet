@@ -1,3 +1,12 @@
+/**
+ * Aufgabenstellung:
+ * Schreiben Sie eine Funktion merge, die zwei sortierte Listen zu einer sortierten Liste zusammenmischt (auch merge darf destruktiv arbeiten)
+ *
+ * Ich nehme mal an, bei den Listen wird es sich um Listen mit Integer-Werten handeln.
+ * Deswegen habe ich die ListInformation mit einer Value geschrieben, die einen Integer-Wert inne hat.
+ * Im Grunde aber, sollte der merge-Algorithmus auch mit jeder anderen Liste klarkommen.
+ */
+
 typedef struct {
     int i;
     struct DATA *next;
@@ -50,7 +59,7 @@ void printList(ListInformation *listInformation) {
     }
 }
 
-void reverseList(ListInformation ** pListInformation) {
+void reverseList(ListInformation **pListInformation) {
     ListInformation *prev = NULL;
     ListInformation *current = *pListInformation;
     ListInformation *next;
