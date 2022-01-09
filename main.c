@@ -7,8 +7,9 @@
 #include "hausaufgabenserie/serie03/Aufgabe02.c"
 #include "praktikum/conway.c"
 #include "hausaufgabenserie/serie04/Aufgabe1.c"
+#include "hausaufgabenserie/serie04/Aufgabe3.c"
 
 int main(void) {
-    start();
+    starter();
 }
 

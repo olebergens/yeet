@@ -27,6 +27,10 @@ void reverseLinkedList(listElement** pListElement) {
 /**
  * start-methode -> wird in der Main-Funktion aufgerufen --> Bei Abgabe bitte in int main(void) ändern damit es zu keinen Schwierigkeiten kommt
  * -> hab ich so weil ich die Hausaufgaben in einem Gesamtprojekt schreibe und nicht für jede Hausaufgabenserie ein neues Projekt aufmache
+ *
+ * Komischerweise erlebe ich nicht das angesproche reverse ausgeben wie in der Hausaufgabendatei.
+ * Wenn ich die Datei in die Liste speichere und wieder ausgebe, gebe ich die Liste gleich in der richtigen Reihenfolge wieder aus und nicht
+ * reversed wie es in Aufgabe 2 steht.
  */
 int start(void) {
     FILE *file;
@@ -45,6 +49,7 @@ int start(void) {
     }
 
     fclose(file);
+
     /**
      * Wir reversen hier die Liste mit der Funktion um eine verkettete Liste umzudrehen
      */
