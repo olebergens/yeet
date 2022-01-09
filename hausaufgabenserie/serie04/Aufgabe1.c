@@ -7,6 +7,20 @@ typedef struct {
     DATA d;
 }listElement;
 
+
+void reverseLinkedList(listElement** pListElement) {
+    listElement *prev = NULL;
+    listElement *current = *pListElement;
+    listElement *next;
+    while (current != NULL) {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+    *pListElement = prev;
+}
+
 int start(void) {
     FILE *file;
     char line[128];
@@ -19,12 +33,13 @@ int start(void) {
         listElement *node = malloc(sizeof(listElement));
         node->d.chr = strdup(line);
         node->next = NULL;
-        if (head == NULL)
-            current = head = node;
-        else
-            current = current->next = node;
+        if (head == NULL) current = head = node;
+        else current = current->next = node;
     }
+
     fclose(file);
+    reverseLinkedList(&current);
+    reverseLinkedList(&head);
     for (current = head; current; current=current->next) {
         printf("%s", current->d.chr);
     }
