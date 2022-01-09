@@ -2,12 +2,16 @@
 #include "stdio.h"
 #include "string.h"
 
+/**
+ * Ich nehme hier bei der Aufgabe auch wieder an, dass ich eine Textdatei mit Integer-Zahlen einlese und diese dann sortiert ausgebe.
+ */
 typedef struct integerList{
     int i;
     struct integerList *next;
 }IntegerList;
 
 /**
+ *
  * @param list : unsortierte Liste welche übergeben wird -> ich sortiere vom kleinsten zum größten -> 1 .. n
  * @return sortierte liste
  */
