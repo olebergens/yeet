@@ -7,9 +7,11 @@
  * Im Grunde aber, sollte der merge-Algorithmus auch mit jeder anderen Liste klarkommen.
  */
 
-typedef struct {
+#include "stdio.h"
+
+typedef struct listInformation{
     int i;
-    struct DATA *next;
+    struct listInformation *next;
 }ListInformation;
 
 ListInformation* merge(ListInformation* data1, ListInformation* data2) {
@@ -103,4 +105,5 @@ int starter(void) {
     result = merge(list1, list2);
     printf("Merged List:\n");
     printList(result);
+    return 0;
 }

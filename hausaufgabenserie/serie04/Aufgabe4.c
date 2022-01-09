@@ -9,6 +9,7 @@
  *
  * Wenn eine Liste mit einer ungeraden Länge gesplitted werden sollte, gebe ich den ersten Wert einfach in die ersten Teil der Liste
  */
+#include "stdio.h"
 
 typedef struct list{
     int i;
