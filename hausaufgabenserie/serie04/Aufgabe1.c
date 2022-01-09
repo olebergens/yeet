@@ -7,7 +7,10 @@ typedef struct {
     DATA d;
 }listElement;
 
-
+/**
+ * @param pListElement : Eingegebene Liste, welche reversed werden soll.
+ * Reversed wird die Liste per einfachem swapping der Elemente.
+ */
 void reverseLinkedList(listElement** pListElement) {
     listElement *prev = NULL;
     listElement *current = *pListElement;
@@ -21,6 +24,10 @@ void reverseLinkedList(listElement** pListElement) {
     *pListElement = prev;
 }
 
+/**
+ * start-methode -> wird in der Main-Funktion aufgerufen --> Bei Abgabe bitte in int main(void) ändern damit es zu keinen Schwierigkeiten kommt
+ * -> hab ich so weil ich die Hausaufgaben in einem Gesamtprojekt schreibe und nicht für jede Hausaufgabenserie ein neues Projekt aufmache
+ */
 int start(void) {
     FILE *file;
     char line[128];
