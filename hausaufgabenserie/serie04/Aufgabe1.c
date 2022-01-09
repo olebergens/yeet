@@ -36,12 +36,15 @@ void reverseLinkedList(listElement** pListElement) {
  * Wenn ich die Datei in die Liste speichere und wieder ausgebe, gebe ich die Liste gleich in der richtigen Reihenfolge wieder aus und nicht
  * reversed wie es in Aufgabe 2 steht.
  */
-int start(void) {
+
+int main(void) {
     FILE *file;
     char line[128];
     listElement *current, *head;
 
     head = current = NULL;
+
+    // FILE Path so ändern, dass die File genommen wird, welche gemeint ist -> hardcoded weil ich als Beispiel die Moby-Dick.txt in die IDE geladen habe um die zu benutzen
     file = fopen("/Users/ole/Desktop/Universität Rostock/Imperative Programmierung/ok0579/hausaufgabenserie/serie04/moby-dick.txt", "r");
 
     while (fgets(line, sizeof(line), file)) {
