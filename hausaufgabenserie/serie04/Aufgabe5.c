@@ -45,7 +45,7 @@ IntegerList *sort(IntegerList *list) {
 }
 
 
-int main(void) {
+int start(void) {
     FILE *file;
     char line[128];
     IntegerList *current, *head;

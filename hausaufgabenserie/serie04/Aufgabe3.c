@@ -79,7 +79,7 @@ void reverseList(ListInformation **pListInformation) {
  * Sollte man jetzt aber schon zwei sortierte Listen haben, welche nicht mehr umgedreht werden brauchen, so ist dieser Schritt nicht nötig.
  * Es dient jetzt dabei nur, dass die temporär hardcoded Liste umgedreht wird und ich es schnell kontrollieren kann, ob alles funktioniert wie es soll.
  */
-int main(void) {
+int starter123(void) {
     ListInformation *result = NULL;
     ListInformation *list1 = NULL;
     ListInformation *list2 = NULL;

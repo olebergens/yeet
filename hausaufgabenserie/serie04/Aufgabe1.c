@@ -37,7 +37,7 @@ void reverseLinkedList(listElement** pListElement) {
  * reversed wie es in Aufgabe 2 steht.
  */
 
-int main(void) {
+int starter(void) {
     FILE *file;
     char line[128];
     listElement *current, *head;
