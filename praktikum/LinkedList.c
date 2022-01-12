@@ -27,10 +27,42 @@ void printRec(struct _list *list) {
 }
 
 int l = 0;
-int lengthIter(struct _list *list) {
-    if (list == NULL) return l;
-    else {
+int lengthRec(struct _list *list) {
+    if (list == NULL) {
+        return l;
+    } else {
         l++;
-        lengthIter(list->next);
+        lengthRec(list->next);
+    }
+    return 0;
+}
+
+int lengthIter(struct _list *list) {
+    int count = 0;
+    struct _list *current = list;
+    while (current != NULL) {
+        count++;
+        current = current->next;
+    }
+    return count;
+}
+
+void findIter(struct _list *list, int d) {
+    int count = 0;
+    while (list != NULL && list->v != d) {
+        list = list->next;
+        count++;
+    }
+    if (list != NULL) printf("%d\n", count);
+    else printf("nicht gefunden\n");
+}
+
+void findRec(struct _list *list, d) {
+    if (list == NULL) {
+        printf("nicht gefunden\n");
+        findRec(list->next, d);
+    }
+    if (list->v == d) {
+        printf("gefunden\n");
     }
 }
