@@ -1,13 +1,10 @@
 #include "stdio.h"
-
-#include "hausaufgabenserie/serie04/Aufgabe1.c"
-#include "hausaufgabenserie/serie04/Aufgabe3.c"
-#include "hausaufgabenserie/serie04/Aufgabe4.c"
-#include "hausaufgabenserie/serie04/Aufgabe5.c"
-#include "praktikum/brueche.c"
-#include "praktikum/LinkedList.c"
+#include "hausaufgabenserie/serie05/Equal.c"
+#include "hausaufgabenserie/serie05/DeleteAll.c"
+#include "hausaufgabenserie/serie05/InsertBefore.c"
+#include "hausaufgabenserie/serie05/InsertAfter.c"
 
 int main(void) {
-    startRational();
+    starter();
 }
 
