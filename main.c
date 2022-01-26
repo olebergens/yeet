@@ -1,8 +1,7 @@
-#include "hausaufgabenserie/serie05/Equal.c"
-#include "hausaufgabenserie/serie05/DeleteAll.c"
-#include "hausaufgabenserie/serie05/InsertBefore.c"
-#include "hausaufgabenserie/serie05/InsertAfter.c"
+#include "hausaufgabenserie/serie06/InfixToUPN.c"
+#include "praktikum/Plagiat.c"
 
 int main(void) {
+    startPlagiat();
 }
 

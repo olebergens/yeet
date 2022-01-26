@@ -2,6 +2,7 @@
 #define OK0579_LIST_H
 
 #include "stdlib.h"
+
 typedef enum {False, True} Bool;
 
 typedef int Value;
